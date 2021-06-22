@@ -2457,16 +2457,19 @@ var Hogan = {};
             , a = document.querySelector('.js-notification-banner__main');
         i && i.addEventListener('click', function (t) {
             e.classList.add('hide'),
+                document.cookie = notificationBannerCookieName + "=maximized; path=/; SameSite=Lax; max-age=86400"
         }),
         t && t.addEventListener('click', function (e) {
             a.classList.add('hide'),
                 this.classList.add('hide'),
                 n.classList.remove('hide'),
+                document.cookie = notificationBannerCookieName + "=minimized; path=/; SameSite=Lax; max-age=86400"
         }),
         n && n.addEventListener('click', function (e) {
             a.classList.remove('hide'),
                 this.classList.add('hide'),
                 t.classList.remove('hide'),
+                document.cookie = notificationBannerCookieName + "=maximized; path=/; SameSite=Lax; max-age=86400"
         })
     }(),
     jQuery(document).ready(function () {
